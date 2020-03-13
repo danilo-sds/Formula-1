@@ -1,0 +1,161 @@
+/*RESET*/
+*,*::before, *::after{margin: 0; padding: 0; box-sizing: border-box;}
+select{border: none;}
+h1,p{margin: 0; padding: 0;}
+a{text-decoration: none; color: inherit;}
+a:hover{color: #4d88ff;}
+img{max-width: 100%; border: none;}
+ul{list-style: none;}
+
+/*GERAIS*/
+.section{
+    /* float: left; */
+    width: 100%;
+}
+body{
+    background-color: black;
+}
+
+/*Header
+----------------------*/
+/*LOGO*/
+.header{
+    position: fixed;
+    width: 100%;
+    padding-top: 30px;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo img{
+    margin-left: 10px;
+    max-width: 150px;
+    opacity: 0.7;
+    background: #fff;
+}
+.menu{
+    margin: 30px 0; /*Deixar ele mais embaixo*/
+    padding: 0 20px; /*Tirar de perto da parede*/
+}
+.menu ul li{
+    display: inline-block; /*Colocar o menu lado a lado*/
+    padding: 10px; /*Tamanho da caixa do menu*/
+    margin: 0 5px;
+    background: #fff;
+    opacity: 0.5;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bolder;
+}
+.cabecalho-header{
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./imagem/o-grid-da-f1-em-2019.jpg);
+    background-size: cover; /*Colocar a imagem sem repetição*/
+    background-attachment: fixed; /*Deixar a imagem fixa*/
+    background-position: center;
+}
+.text-header{
+    background: #fff;
+    opacity: 0.5; /*Transparente*/
+    max-width: 350px;
+    width: 90%; /*Para mobile*/
+    padding: 30px; /*Tamanho da caixa transparente*/
+    text-align: center;
+}
+.text-header h1{
+    color: inherit;
+    font-weight: bolder;
+}
+.text-header p{
+    color: inherit;
+    font-weight: bolder;
+}
+.box-name{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: aquamarine;
+}
+/*Edição imagens Circuitos*/
+.box-teams,
+.box-pilots,
+.box-clues {
+    display: flex;
+    flex-wrap: wrap; /* Quebra os .box em várias linhas */
+}
+.box{
+    position: relative;
+    overflow: hidden;
+    width: calc(25% - 10px * 2);
+    margin: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.name-location{  /*Efeito da legenda*/
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #4d88ff;
+}
+.box-image img{ /* Efeito na foto: aumentar foto*/
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+}
+.box:hover .box-image img{ /*Efeito na foto: Tamanho normal*/
+    transform: scale(1);
+    -webkit-transform: scale(1.1);
+}
+.box-details{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 15px;
+    color: #000;
+    font-size: 15px;
+}
+.box-details:before {
+    content: ""; /*Não esquecer de colocar*/
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .8;
+    visibility: hidden;
+
+}
+.box-details-info{
+    position: relative;  /*Faz a legenda da foto desaparecer*/
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.box-details-info h1{
+    font-size: 20px;
+}
+
+.box:hover .box-details-info{
+    opacity: 5;
+    visibility: visible;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    background-color: #fff ;
+    border-radius: 5px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.text-center{text-align: center;}
